@@ -35,7 +35,7 @@
         <form id="loginForm">
           <div class="mb-3">
             <label class="form-label">Username</label>
-            <input type="text" id="email" class="form-control" required>
+            <input type="text" id="username" class="form-control" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Password</label>
@@ -52,7 +52,7 @@
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const email = document.getElementById('email').value;
+      const email = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
       try {
