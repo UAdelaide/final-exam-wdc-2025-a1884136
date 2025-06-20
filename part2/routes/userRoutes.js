@@ -36,35 +36,4 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const [rows] = await db.query('SELECT * FROM Users WHERE email = ?', [email]);
-    const user = row[0];
-
-    if (!user) {
-      return res.status(401).json({ error: 'Invalid email or password' });
-    }
-
-    const isMatch = await argon2.verify(user.password_hash, password);
-    if (!isMatch) {
-      return res.status(401).json({ error: 'Invalid email or password' });
-    }
-
-    req.session.user = {
-      user_id: user.user_id,
-      username: user.username,
-      email: user.email,
-      role: user.role
-    };
-
-    res.json({ message: 'Login successfull', user: req.session.user });
-
-  } catch (error) {
-    console.error('Login error', error);
-    res.status(500).json({ error: 'Login failed' });
-  }
-});
-
 module.exports = router;
