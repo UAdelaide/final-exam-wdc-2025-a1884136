@@ -6,7 +6,9 @@ const session = require('express-session');
 const app = express();
 
 app.use(session({
-
+    secret: 'dogwalk-secret-key',
+    resave: false,
+    
 }))
 
 // Middleware
