@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
+const argon2 = require('argon2');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
