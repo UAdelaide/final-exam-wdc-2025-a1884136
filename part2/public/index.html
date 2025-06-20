@@ -65,7 +65,8 @@
         const result = await res.json();
 
         if (!res.ok) {
-          document.getElementById('loginError').innerText = result.error || 
+          document.getElementById('loginError').innerText = result.error || 'Login failed';
+          
         }
       }
     })
