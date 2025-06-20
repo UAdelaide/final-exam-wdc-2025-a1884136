@@ -11,3 +11,4 @@ const pool = mysql.createPool({
     mutlipleStatements: true
 });
 
+(async)
