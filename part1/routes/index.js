@@ -10,7 +10,9 @@ router.get('/', function(req, res, next) {
 });
 
 const pool = mysql.createPool({
-  host: 'local'
+  host: 'localhost',
+  user: 'root',
+  
 });
 
 module.exports = router;
