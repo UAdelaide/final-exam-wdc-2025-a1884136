@@ -18,7 +18,7 @@ const db = mysql.createPool({
 router.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await createPool.query('SELECT * FROM Dogs');
-    res.
+    res.json(rows);
   }
 })
 
