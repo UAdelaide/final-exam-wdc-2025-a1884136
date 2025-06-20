@@ -11,4 +11,8 @@ const pool = mysql.createPool({
     mutlipleStatements: true
 });
 
-(async)
+(async () =>) {
+    try {
+        const sql
+    }
+}
