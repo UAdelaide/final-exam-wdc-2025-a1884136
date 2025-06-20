@@ -61,6 +61,10 @@
           headers: { 'Context-Type': 'application/json' },
           body: JSON.stringify({ email, password })
         }):
+
+        const result = await res.json();
+
+        
       }
     })
   </script>
