@@ -78,7 +78,8 @@
           document.getElementById('loginError').innerText = 'Unknown role: ' + role;
         }
       } catch (err) {
-        document.getElementById('loginError').innerText = 'Network'
+        document.getElementById('loginError').innerText = 'Network error or server unavailable';
+        
       }
     })
   </script>
