@@ -5,7 +5,7 @@ const session = require('express-session');
 
 const app = express();
 
-
+app.use(SESSION)
 
 // Middleware
 app.use(express.json());
