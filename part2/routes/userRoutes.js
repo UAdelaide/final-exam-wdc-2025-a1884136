@@ -41,17 +41,29 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const [rows] = await db.query(`
-      SELECT user_id, username, role FROM Users
-      WHERE email = ? AND password_hash = ?
-    `, [email, password]);
+    const [rows] = await db.query('SELECT * FROM Users WHERE email = ?', [email]);
+    const user = row[0];
 
-    if (rows.length === 0) {
-      return res.status(401).json({ error: 'Invalid credentials' });
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    res.json({ message: 'Login successful', user: rows[0] });
+    const isMatch = await argon2.verify(user.password_hash, password);
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    req.session.user = {
+      user_id: user.user_id,
+      username: user.username,
+      email: user.email,
+      role: user.role
+    };
+
+    res.json({ message: 'Login successfull', user: req.session.user });
+
   } catch (error) {
+    console.error('Login error', error);
     res.status(500).json({ error: 'Login failed' });
   }
 });
