@@ -111,7 +111,7 @@
     document.getElementById('logoutBtn').addEventListener('click', async () => {
       try {
         await fetch('/api/users/logout', { method: 'POST' });
-        window.location.href = '/'
+        window.location.href = '/';
       } catch (err) {
         alert('Logout failed.');
       }
