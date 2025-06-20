@@ -77,7 +77,11 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ walker_id: currentUser.value.user_id})
-            })
+            });
+
+            const result = await res.json() {
+              
+            }
 
           }
         }
