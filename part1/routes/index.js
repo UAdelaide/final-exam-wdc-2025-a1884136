@@ -1,4 +1,5 @@
 var express = require('express');
+const { createPool } = require('mysql');
 var router = express.Router();
 const mysql = require('mysql/promise');
 
@@ -16,7 +17,7 @@ const db = mysql.createPool({
 
 router.get('/api/dogs', async (req, res) => {
   try {
-    const [rows]
+    const [rows] = await createPool.query('SELECT * FROM Dogs')
   }
 }
 
