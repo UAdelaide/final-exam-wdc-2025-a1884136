@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
     const user = row[0];
 
     if (!user) {
-      return res.status(401.json)
+      return res.status(401).json({ error:})
     }
   }
 })
