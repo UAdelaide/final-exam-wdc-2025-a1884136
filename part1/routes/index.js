@@ -28,7 +28,9 @@ router.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [rows] = await createPool.query("SELECT * FROM WalkRequests WHERE status = 'open'");
     res.json(rows);
-  } catch (err) {}
+  } catch (err) {
+    res.status(500).json({ error:})
+  }
 })
 
 module.exports = router;
