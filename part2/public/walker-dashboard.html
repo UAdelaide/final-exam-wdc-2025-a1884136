@@ -69,7 +69,9 @@
 
         async function applyToWalk(requestId) {
           try {
-            if ()
+            if (!currentUser.value) {
+              throw new Error('No user info available')
+            }
           }
         }
 
