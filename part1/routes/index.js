@@ -36,7 +36,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
 router.get('/api/walkers/summary', async (req, res) => {
   try {
     const [rows] = await pool.query(
-      'SELECT u.username, COUNT(wr.request_id) AS completed_walks FROM Users u JOIN WalkApplications wa ON')
+      'SELECT u.username, COUNT(wr.request_id) AS completed_walks FROM Users u JOIN WalkApplications wa ON u.user_id = wa.walker_id JOIN W')
   }
 });
 
