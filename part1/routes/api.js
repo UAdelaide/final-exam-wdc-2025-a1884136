@@ -32,3 +32,30 @@ router.get('/dogs', async (req, res) => {
   }
 });
 
+router.get('/walkrequests/open', async (req, res) => {
+  try {
+    const [rows] = await pool.query("USE DogWalkService; SELECT * FROM WalkRequests WHERE status = 'open';");
+    res.json(rows[1]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/walkers/summary', async (req, res) => {
+  try {
+    const [rows] = await pool.query(`
+      USE DogWalkService;
+      SELECT u.username, COUNT(wr.request_id) AS completed_walks
+      FROM Users u
+      JOIN WalkApplications wa ON u.user_id = wa.walker_id
+      JOIN WalkRequests wr ON wa.request_id = wr.request_id
+      WHERE u.role = 'walker' AND wa.status = 'accepted' AND wr.status = 'completed'
+      GROUP BY u.username;
+    `);
+    res.json(rows[1]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+module.exports = router;
