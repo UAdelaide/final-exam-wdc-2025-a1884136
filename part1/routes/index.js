@@ -11,7 +11,7 @@ const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: ''
-})
+  database: 'DogWalkService'
+});
 
 module.exports = router;
