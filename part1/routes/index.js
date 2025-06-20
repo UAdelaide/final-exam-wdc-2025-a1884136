@@ -7,6 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-const db = 
+const db = mysql.createPool({
+  host
+})
 
 module.exports = router;
