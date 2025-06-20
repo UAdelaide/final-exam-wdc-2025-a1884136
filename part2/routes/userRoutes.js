@@ -39,7 +39,9 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  try
+  try {
+    
+  }
 })
 
 module.exports = router;
