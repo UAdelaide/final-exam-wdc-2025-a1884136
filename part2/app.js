@@ -8,6 +8,7 @@ const app = express();
 app.use(session({
     secret: 'dogwalk-secret-key',
     resave: false,
+    saveUninitialized: false,
     
 }))
 
