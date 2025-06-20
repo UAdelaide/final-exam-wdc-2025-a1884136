@@ -9,4 +9,5 @@ const pool = mysql.createPool({
     user: 'root',
     password: '',
     mutlipleStatements: true
-})
+});
+
