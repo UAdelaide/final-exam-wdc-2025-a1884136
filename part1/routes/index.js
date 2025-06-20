@@ -14,6 +14,6 @@ const db = mysql.createPool({
   database: 'DogWalkService'
 });
 
-
+router
 
 module.exports = router;
