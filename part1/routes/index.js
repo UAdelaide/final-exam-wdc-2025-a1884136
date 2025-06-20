@@ -26,7 +26,7 @@ router.get('/api/dogs', async (req, res) => {
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [rows] = await pool
+    const [rows] = await createPool.query(SELECT * FROM WalkRequests)
   }
 })
 
