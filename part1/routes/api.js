@@ -7,5 +7,6 @@ const path = require('path');
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password:
+    password: '',
+    mutlipleStatements: true
 })
