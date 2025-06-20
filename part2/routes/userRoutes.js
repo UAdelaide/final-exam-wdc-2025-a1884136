@@ -73,7 +73,8 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) => {
   req.session.destroy(err => {
-    if (err) return res.status(500).json({ error})
+    if (err) return res.status(500).json({ error: 'Login failed' });
+    res.
   })
 })
 
