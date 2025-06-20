@@ -20,7 +20,7 @@ router.get('/api/dogs', async (req, res) => {
     const [rows] = await createPool.query('SELECT * FROM Dogs');
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Failed to get dogs' });
   }
 });
 
