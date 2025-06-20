@@ -92,7 +92,8 @@
         }
 
         onMounted(async () => {
-          currentUser
+          currentUser.value = await getCurrent();
+          await local
         })
 
         return {
