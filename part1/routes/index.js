@@ -1,5 +1,4 @@
 var express = require('express');
-const { createPool } = require('mysql');
 var router = express.Router();
 const mysql = require('mysql/promise');
 
