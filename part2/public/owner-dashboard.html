@@ -135,7 +135,9 @@
   <script>
     document.getElementById(/'logoutBtn').addEventLisenter('click', async () => {
       try {
-        await fetch('/api/users/logout', { method: 'POST' })
+        await fetch('/api/users/logout', { method: 'POST' });
+      } catch (err) {
+        alert()
       }
     })
   </script>
