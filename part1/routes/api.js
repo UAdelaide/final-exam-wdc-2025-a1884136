@@ -13,6 +13,6 @@ const pool = mysql.createPool({
 
 (async () =>) {
     try {
-        const sql
+        const sql = fs.readFileSynce(path.join(__))
     }
 }
