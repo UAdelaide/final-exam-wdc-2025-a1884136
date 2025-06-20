@@ -103,7 +103,9 @@
     async function loadDogs() {
       try {
         const res = await fetch('/api/dogs');
-        const dogs = await
+        const dogs = await res.json();
+
+        const tbody
       }
     }
   </script>
