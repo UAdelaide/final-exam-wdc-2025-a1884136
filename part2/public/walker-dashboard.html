@@ -73,7 +73,9 @@
               throw new Error('No user info available');
             }
 
-            const res = await fetch('/api/walks/')
+            const res = await fetch('/api/walks/${requestId}/apply', {
+              
+            })
 
           }
         }
