@@ -60,7 +60,7 @@
           method: 'POST',
           headers: { 'Context-Type': 'application/json' },
           body: JSON.stringify({ email, password })
-        }):
+        });
 
         const result = await res.json();
 
@@ -72,7 +72,7 @@
         const role = result.user.role;
         if (role == 'owner') {
           window.location.href = 'owner-dashboard.html';
-        } else if
+        } else if (role)
       }
     })
   </script>
