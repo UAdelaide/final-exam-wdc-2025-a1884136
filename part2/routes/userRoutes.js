@@ -43,7 +43,9 @@ router.post('/login', async (req, res) => {
     const [rows] = await db.query('SELECT * FROM Users WHERE email = ?', [email]);
     const user = row[0];
 
-    if (!user) {}
+    if (!user) {
+      return res.status(401.json)
+    }
   }
 })
 
