@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 const db = mysql.createPool({
-
 })
 
 module.exports = router;
