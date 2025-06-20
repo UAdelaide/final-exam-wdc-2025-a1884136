@@ -20,7 +20,7 @@ router.get('/api/dogs', async (req, res) => {
     const [rows] = await createPool.query('SELECT * FROM Dogs');
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: err.message})
+    res.status(500).json({ error: err.message });
   }
 });
 
@@ -29,8 +29,9 @@ router.get('/api/walkrequests/open', async (req, res) => {
     const [rows] = await createPool.query("SELECT * FROM WalkRequests WHERE status = 'open'");
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error:})
+    res.status(500).json({ error: err.message });
   }
-})
+});
+
 
 module.exports = router;
