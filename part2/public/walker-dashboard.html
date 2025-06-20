@@ -52,7 +52,8 @@
             if (!res.ok) throw new Error('Not logged in');
             return await res.json();
           } catch (err) {
-            error.value
+            error.value = 'Unable to get user details';
+            return null;
           }
         }
 
