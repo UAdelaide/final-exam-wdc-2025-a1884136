@@ -82,7 +82,9 @@
             const result = await res.json() {
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            message.value 
+            message.value = result.message;
+            error.value = '';
+            
             }
 
           }
