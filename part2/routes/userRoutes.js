@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
 
     console.log('EMAIL;', email);
     console.log('PASSWORD:', password);
-    console.log('HASH FROM DB';)
+    console.log('HASH FROM DB:', user.password_hash);
 
     const isMatch = await argon2.verify(user.password_hash, password);
     if (!isMatch) {
