@@ -94,7 +94,7 @@
 
         onMounted(async () => {
           currentUser.value = await getCurrentUser();
-          await loadWalkRequest();
+          await loadWalkRequests();
         });
 
         return {
