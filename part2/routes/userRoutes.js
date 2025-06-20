@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
       role: user.role
     };
 
-    res.json({ message: 'Login successfull'})
+    res.json({ message: 'Login successfull', user: req.session.user });
 
   }
 })
