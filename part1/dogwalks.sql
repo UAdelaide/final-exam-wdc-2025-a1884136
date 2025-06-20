@@ -59,4 +59,4 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
 ('carol123', 'carol@example.com', 'hashed789', 'owner'),
 ('davewalker','dave@example.com', 'hashed101', 'walker'),
-('emilyowner', 'emily@')
+('emilyowner', 'emily@example.com','hashed202', 'owner')
