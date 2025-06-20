@@ -58,7 +58,8 @@
       try {
         const res = await fetch('/api/users/login', {
           method: 'POST',
-          headers: { 'Context-Type':}
+          headers: { 'Context-Type': 'application/json' },
+          body: JSON
         })
       }
     })
