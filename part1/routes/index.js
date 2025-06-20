@@ -14,6 +14,8 @@ const db = mysql.createPool({
   database: 'DogWalkService'
 });
 
-router.get('/api/dogs')
+router.get('/api/dogs', async (res,)
+
+)
 
 module.exports = router;
