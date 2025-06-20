@@ -91,7 +91,9 @@
           }
         }
 
-        onMounted(asdync)
+        onMounted(async () => {
+          currentUser
+        })
 
         return {
           walks,
