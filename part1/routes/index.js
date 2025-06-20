@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-const db = mysql.createPool({
+const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'password',
@@ -17,7 +17,7 @@ const db = mysql.createPool({
 
 router.get('/api/dogs', async (req, res) => {
   try {
-    const [rows] = await createPool.query('SELECT * FROM Dogs');
+    const [rows] = await pool.query('SELECT * FROM Dogs');
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to get dogs' });
@@ -26,7 +26,7 @@ router.get('/api/dogs', async (req, res) => {
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [rows] = await createPool.query("SELECT * FROM WalkRequests WHERE status = 'open'");
+    const [rows] = await pool.query("SELECT * FROM WalkRequests WHERE status = 'open'");
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to get walk requests' });
