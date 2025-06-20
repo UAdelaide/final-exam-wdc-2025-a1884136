@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    const isMatch = await
+    const isMatch = await argon2.verify(user.password_hash, password)
   }
 })
 
