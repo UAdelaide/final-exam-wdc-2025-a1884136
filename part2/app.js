@@ -9,8 +9,8 @@ app.use(session({
     secret: 'dogwalk-secret-key',
     resave: false,
     saveUninitialized: false,
-    
-}))
+    cookie: { secure: false }
+}));
 
 // Middleware
 app.use(express.json());
