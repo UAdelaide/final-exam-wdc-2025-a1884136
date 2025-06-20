@@ -35,8 +35,9 @@ router.get('/api/walkrequests/open', async (req, res) => {
 
 router.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [rows] = await pool.query
+    const [rows] = await pool.query('
+      ')
   }
-})
+});
 
 module.exports = router;
