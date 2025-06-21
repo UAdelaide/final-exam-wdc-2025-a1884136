@@ -16,12 +16,9 @@ const pool = mysql.createPool({
 
 router.get('/api/dogs', async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM Dogs');
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to get dogs' });
+    
   }
-});
+}
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
