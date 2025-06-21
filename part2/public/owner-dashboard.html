@@ -99,7 +99,7 @@
           return await res.json();
         }
 
-        aysnc function loadDogs() {
+        async function loadDogs() {
           const all = await fetch('/api/dogs').then(r => r,json());
           dogs.value = all.filter(d => d.owner_id === currentUser.value/user_id);
         }
