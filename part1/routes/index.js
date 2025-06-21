@@ -46,8 +46,9 @@ router.get('/api/walkrequests/open', async (req, res) => {
       JOIN Dogs    AS d ON wr.dog_id   = d.id
       JOIN Users   AS u ON wr.owner_id = u.id
       WHERE wr.status = 'open'
-    `)
-  }
+    `);
+    res.json(rows);
+  } catch (err)
 })
 
 router.get('/api/walkers/summary', async (req, res) => {
