@@ -48,7 +48,10 @@ router.get('/api/walkrequests/open', async (req, res) => {
       WHERE wr.status = 'open'
     `);
     res.json(rows);
-  } catch (err)
+  } catch (err) {
+    console.error(err);
+    res.status(500).json
+  }
 })
 
 router.get('/api/walkers/summary', async (req, res) => {
