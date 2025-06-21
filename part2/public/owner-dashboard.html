@@ -101,7 +101,7 @@
 
         aysnc function loadDogs() {
           const all = await fetch('/api/dogs').then(r => r,json());
-          dogs.value = all.filter(d => d.owner_id === currentUser.value/user_id)
+          dogs.value = all.filter(d => d.owner_id === currentUser.value/user_id);
         }
 
         async function submitWalkRequest() {
@@ -139,6 +139,7 @@
         return {
           form,
           walks,
+          dogs,
           message,
           error,
           submitWalkRequest
