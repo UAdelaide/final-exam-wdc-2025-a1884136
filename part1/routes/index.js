@@ -16,9 +16,9 @@ const pool = mysql.createPool({
 
 router.get('/api/dogs', async (req, res) => {
   try {
-    
+    const [rows] =
   }
-}
+})
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
