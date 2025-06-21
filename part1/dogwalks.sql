@@ -64,11 +64,11 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 
 -- Insert Dogs
 INSERT INTO Dogs (owner_id, name, size) VALUES
-((SELECT id FROM Users WHERE username = 'alice123'),   'Max',   'medium'),
-((SELECT id FROM Users WHERE username = 'carol123'),   'Bella', 'small'),
-((SELECT id FROM Users WHERE username = 'alice123'),   'Rocky', 'medium'),
-((SELECT id FROM Users WHERE username = 'emilyowner'), 'Luna',  'medium'),
-((SELECT id FROM Users WHERE username = 'carol123'),   'Daisy', 'small');
+((SELECT id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+((SELECT id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+((SELECT id FROM Users WHERE username = 'alice123'), 'Rocky', 'medium'),
+((SELECT id FROM Users WHERE username = 'emilyowner'), 'Luna', 'medium'),
+((SELECT id FROM Users WHERE username = 'carol123'), 'Daisy', 'small');
 
 -- Insert Walk Requests
 INSERT INTO WalkRequests (dog_id, date_time, duration, location, status) VALUES
