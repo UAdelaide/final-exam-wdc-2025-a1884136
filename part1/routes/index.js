@@ -56,7 +56,7 @@ router.get('/api/walkrequests/open', async (req, res) => {
 
 router.get('/api/walkers/summary', async (req, res) => {
   try {
-    const
+    const [rows] = await pool.query()
   }
 })
 
