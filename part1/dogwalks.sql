@@ -56,11 +56,11 @@ CREATE TABLE WalkRatings (
 
 -- Insert Users
 INSERT INTO Users (username, email, password_hash, role) VALUES
-  ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-  ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-  ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-  ('davewalker', 'dave@example.com', 'hashed101', 'walker'),
-  ('emilyowner', 'emily@example.com', 'hashed202', 'owner');
+('alice123', 'alice@example.com', 'hashed123', 'owner'),
+('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+('carol123', 'carol@example.com', 'hashed789', 'owner'),
+('davewalker', 'dave@example.com', 'hashed101', 'walker'),
+('emilyowner', 'emily@example.com', 'hashed202', 'owner');
 
 -- Insert Dogs
 INSERT INTO Dogs (owner_id, name, size) VALUES
