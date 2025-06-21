@@ -30,7 +30,7 @@ router.get('/api/dogs', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: err.message });
   }
-})
+});
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
