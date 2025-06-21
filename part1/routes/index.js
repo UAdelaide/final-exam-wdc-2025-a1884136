@@ -34,7 +34,19 @@ router.get('/api/dogs', async (req, res) => {
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const
+    const [rows] = await pool.query(`
+      SELECT
+        wr.id           AS request_id,
+        d.name         AS dog_name,
+        wr.start_time  AS requested_time,
+        wr.duration_mins AS duration_minutes,
+        wr.location    AS location,
+        u.username     AS owner_username
+      FROM WalkRequests AS wr
+      JOIN Dogs    AS d ON wr.dog_id   = d.id
+      JOIN Users   AS u ON wr.owner_id = u.id
+      WHERE wr.status = 'open'
+    `)
   }
 })
 
