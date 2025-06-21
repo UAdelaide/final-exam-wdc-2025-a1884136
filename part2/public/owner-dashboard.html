@@ -154,9 +154,10 @@
   </script>
 
   <script>
-    document.getElementById(/'logoutBtn').addEventLisenter('click', async () => {
+    document.getElementById(/'logoutBtn').addEventListener('click', async () => {
       try {
         await fetch('/api/users/logout', { method: 'POST' });
+        window
       } catch (err) {
         alert('Logout failed.');
       }
