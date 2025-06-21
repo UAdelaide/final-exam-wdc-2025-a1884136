@@ -34,12 +34,9 @@ router.get('/api/dogs', async (req, res) => {
 
 router.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [rows] = await pool.query("SELECT * FROM WalkRequests WHERE status = 'open'");
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to get walk requests' });
+    const
   }
-});
+})
 
 router.get('/api/walkers/summary', async (req, res) => {
   try {
