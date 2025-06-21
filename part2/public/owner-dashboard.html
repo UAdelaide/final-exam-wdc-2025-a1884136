@@ -100,7 +100,8 @@
         }
 
         aysnc function loadDogs() {
-          const all = await fetch('/api/dogs').then(r => r,json)
+          const all = await fetch('/api/dogs').then(r => r,json());
+          dogs.value = all.filter(d => )
         }
 
         async function submitWalkRequest() {
