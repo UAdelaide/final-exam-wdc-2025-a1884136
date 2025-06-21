@@ -154,7 +154,7 @@
   </script>
 
   <script>
-    document.getElementById(/'logoutBtn').addEventListener('click', async () => {
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
       try {
         await fetch('/api/users/logout', { method: 'POST' });
         window.location.href = '/';
